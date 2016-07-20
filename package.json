@@ -1,0 +1,23 @@
+{
+  "name": "joshgrib.com",
+  "version": "0.1.0",
+  "description": "Code for joshgrib.com",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshgrib/joshgrib.git"
+  },
+  "author": "Josh Gribbon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshgrib/joshgrib/issues"
+  },
+  "homepage": "https://github.com/joshgrib/joshgrib#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
