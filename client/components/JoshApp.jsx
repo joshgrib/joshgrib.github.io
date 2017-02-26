@@ -17,11 +17,6 @@ export default class JoshApp extends React.Component {
     componentDidMount(){
         console.log('App mounted');
     }
-    changePage(pageName){
-        if(this.state.navPages.includes(pageName)){
-            this.setState({mainPage:pageName});
-        }
-    }
     render(){
         return(
             <Container id="JoshApp">
@@ -32,10 +27,10 @@ export default class JoshApp extends React.Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col>
+                    <Col sm={1}>
                         <JoshNav
                             pages={this.state.navPages}
-                            changePage={this.changePage}/>
+                            currPage={this.state.mainPage}/>
                     </Col>
                 </Row>
                 <Row>

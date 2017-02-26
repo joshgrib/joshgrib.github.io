@@ -9,17 +9,31 @@ export default class JoshNav extends React.Component {
     render(){
         return(
             <nav>
-                {this.props.pages.map((page) => {
-                    return (
-                        <li
-                            key={page}
-                            onClick={this.props.changePage(page)}>{page}</li>
-                    );
-                })}
+                <Container>
+                    <Row>
+                        <Col sm={2} xs={12}>
+                            <p>Title</p>
+                        </Col>
+                        <Col sm={10} xs={12}>
+                            <ul className="nav nav-pills">
+                                {this.props.pages.map((pageName) => {
+                                    let isActive = this.props.currPage === pageName;
+                                    return(
+                                        <li sm={2} xs={12} key={pageName}
+                                            className={isActive?"active":""}>
+                                            <a href="">{pageName}</a>
+                                        </li>
+                                    )
+                                })}
+                            </ul>
+                        </Col>
+                    </Row>
+                </Container>
             </nav>
         );
     }
 }
 JoshNav.propTypes = {
-    pages: React.PropTypes.array.isRequired
+    pages: React.PropTypes.array.isRequired,
+    currPage: React.PropTypes.string.isRequired
 }
