@@ -19,7 +19,6 @@
         "react-bootstrap": "^0.30.7",
         "react-dom": "^15.4.2",
         "react-tap-event-plugin": "^2.0.1",
-        "reactstrap": "^4.2.0",
         "style-loader": "^0.13.1",
         "webpack": "^2.2.1",
         "webpack-dev-server": "^2.3.0"

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class JoshFooter extends React.Component {
+export default class AppFooter extends React.Component {
     constructor(props){
         super(props);
         this.state = {};
@@ -13,4 +13,4 @@ export default class JoshFooter extends React.Component {
         );
     }
 }
-JoshFooter.propTypes = {}
+AppFooter.propTypes = {}

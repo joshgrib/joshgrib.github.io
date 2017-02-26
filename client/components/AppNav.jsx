@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class JoshNav extends React.Component {
+export default class AppNav extends React.Component {
     constructor(props){
         super(props);
         this.state = {};
@@ -21,7 +21,7 @@ export default class JoshNav extends React.Component {
         );
     }
 }
-JoshNav.propTypes = {
+AppNav.propTypes = {
     pages: React.PropTypes.array.isRequired,
     currPage: React.PropTypes.string.isRequired
 }

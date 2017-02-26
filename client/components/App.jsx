@@ -1,11 +1,11 @@
 import React from 'react';
 
-import JoshHeader from './JoshHeader.jsx';
-import JoshNav from './JoshNav.jsx';
-import JoshMain from './JoshMain.jsx';
-import JoshFooter from './JoshFooter.jsx';
+import AppHeader from './AppHeader.jsx';
+import AppNav from './AppNav.jsx';
+import AppMain from './AppMain.jsx';
+import AppFooter from './AppFooter.jsx';
 
-export default class JoshApp extends React.Component {
+export default class App extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -18,16 +18,17 @@ export default class JoshApp extends React.Component {
     }
     render(){
         return(
-            <div id="JoshApp">
-                <JoshHeader
+            <div id="App">
+                <AppHeader
                     mainText="Header"/>
-                <JoshNav
+                <AppNav
                     pages={this.state.navPages}
                     currPage={this.state.mainPage}/>
-                <JoshMain
+                <AppMain
                     page={this.state.mainPage}/>
-                <JoshFooter/>
+                <AppFooter/>
             </div>
         );
     }
 }
+App.propTypes = {};

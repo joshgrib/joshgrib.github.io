@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class JoshHeader extends React.Component {
+export default class AppHeader extends React.Component {
     constructor(props){
         super(props);
         this.state = {};
@@ -11,6 +11,6 @@ export default class JoshHeader extends React.Component {
         );
     }
 }
-JoshHeader.propTypes = {
+AppHeader.propTypes = {
     mainText: React.PropTypes.string.isRequired
 }

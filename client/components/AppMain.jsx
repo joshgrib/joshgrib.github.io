@@ -2,8 +2,11 @@ import React from 'react';
 
 import Home from './main/Home.jsx';
 import About from './main/About.jsx';
+import Projects from './main/Projects.jsx';
+import Writing from './main/Writing.jsx';
+import Personal from './main/Personal.jsx';
 
-export default class JoshMain extends React.Component {
+export default class AppMain extends React.Component {
     constructor(props){
         super(props);
         this.state = {};
@@ -18,13 +21,13 @@ export default class JoshMain extends React.Component {
                 content = (<About/>);
                 break;
             case "Projects":
-                content = (<p>Not made yet</p>);
+                content = (<Projects/>);
                 break;
             case "Writing":
-                content = (<p>Not made yet</p>);
+                content = (<Writing/>);
                 break;
             case "Personal":
-                content = (<p>Not made yet</p>);
+                content = (<Personal/>);
                 break;
             default:
                 content = (<p>content switch error at main</p>);
@@ -34,6 +37,6 @@ export default class JoshMain extends React.Component {
         );
     }
 }
-JoshMain.propTypes = {
+AppMain.propTypes = {
     page: React.PropTypes.string.isRequired
 }
