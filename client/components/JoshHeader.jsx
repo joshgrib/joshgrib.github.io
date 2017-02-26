@@ -1,5 +1,4 @@
 import React from 'react';
-import {Container, Row, Col} from 'reactstrap';
 
 export default class JoshHeader extends React.Component {
     constructor(props){
@@ -8,7 +7,7 @@ export default class JoshHeader extends React.Component {
     }
     render(){
         return(
-            <h1>{this.props.mainText}</h1>
+            <header>{this.props.mainText}</header>
         );
     }
 }

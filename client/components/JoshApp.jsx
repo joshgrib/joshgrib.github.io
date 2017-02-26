@@ -1,5 +1,4 @@
 import React from 'react';
-import {Container, Row, Col} from 'reactstrap';
 
 import JoshHeader from './JoshHeader.jsx';
 import JoshNav from './JoshNav.jsx';
@@ -19,32 +18,16 @@ export default class JoshApp extends React.Component {
     }
     render(){
         return(
-            <Container id="JoshApp">
-                <Row>
-                    <Col>
-                        <JoshHeader
-                            mainText="Header"/>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col sm={1}>
-                        <JoshNav
-                            pages={this.state.navPages}
-                            currPage={this.state.mainPage}/>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <JoshMain
-                            page={this.state.mainPage}/>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <JoshFooter/>
-                    </Col>
-                </Row>
-            </Container>
+            <div id="JoshApp">
+                <JoshHeader
+                    mainText="Header"/>
+                <JoshNav
+                    pages={this.state.navPages}
+                    currPage={this.state.mainPage}/>
+                <JoshMain
+                    page={this.state.mainPage}/>
+                <JoshFooter/>
+            </div>
         );
     }
 }

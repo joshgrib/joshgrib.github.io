@@ -1,5 +1,4 @@
 import React from 'react';
-import {Container, Row, Col} from 'reactstrap';
 
 export default class About extends React.Component {
     constructor(props){
@@ -8,7 +7,9 @@ export default class About extends React.Component {
     }
     render(){
         return(
-            <p>main/About</p>
+            <section>
+                <p>main/About</p>
+            </section>
         );
     }
 }

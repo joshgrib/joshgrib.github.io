@@ -1,5 +1,4 @@
 import React from 'react';
-import {Container, Row, Col} from 'reactstrap';
 
 import Home from './main/Home.jsx';
 import About from './main/About.jsx';
