@@ -21,3 +21,5 @@ Maybe add courses and update to see possible combos with that
 
 Define required courses then list optional ones to include but also show schedules where that course would cause a conflict
 */
+
+//https://www.npmjs.com/package/xml-js
