@@ -14,7 +14,7 @@ export default class App extends React.Component {
         };
     }
     componentDidMount(){
-        console.log('App mounted');
+        console.log('App.jsx mounted');
     }
     render(){
         return(

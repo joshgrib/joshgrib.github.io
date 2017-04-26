@@ -11,7 +11,7 @@ export default class AppNav extends React.Component {
                 {this.props.pages.map((pageName) => {
                     let isActive = this.props.currPage === pageName;
                     return(
-                        <li sm={2} xs={12} key={pageName}
+                        <li key={pageName}
                             className={isActive?"active":""}>
                             <a href="">{pageName}</a>
                         </li>
