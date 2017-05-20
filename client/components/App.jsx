@@ -12,9 +12,17 @@ export default class App extends React.Component {
             navPages: ["Home", "About", "Projects", "Writing"],
             mainPage: "Home"
         };
+        this.changePage = this.changePage.bind(this);
     }
     componentDidMount(){
         console.log('App.jsx mounted');
+    }
+    changePage(newPage){
+      if(this.state.navPages.indexOf(newPage) > -1){
+        this.setState({mainPage:newPage});
+      }else{
+        console.error(`App.jsx: changePage: Bad page change sent '${newPage}'.`)
+      }
     }
     render(){
         return(
@@ -23,7 +31,8 @@ export default class App extends React.Component {
                     mainText="Header"/>
                 <AppNav
                     pages={this.state.navPages}
-                    currPage={this.state.mainPage}/>
+                    currPage={this.state.mainPage}
+                    changeNavPage={this.changePage}/>
                 <AppMain
                     page={this.state.mainPage}/>
                 <AppFooter/>

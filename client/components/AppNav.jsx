@@ -4,6 +4,10 @@ export default class AppNav extends React.Component {
     constructor(props){
         super(props);
         this.state = {};
+        this.changePage = this.changePage.bind(this);
+    }
+    changePage(e){
+      this.props.changeNavPage(e.target.innerHTML);
     }
     render(){
         return(
@@ -12,8 +16,10 @@ export default class AppNav extends React.Component {
                     let isActive = this.props.currPage === pageName;
                     return(
                         <li key={pageName}
-                            className={isActive?"active":""}>
-                            <a href="">{pageName}</a>
+                            className={isActive?"active":""}
+                            value={pageName}
+                            onClick={this.changePage}>
+                            <a>{pageName}</a>
                         </li>
                     )
                 })}
@@ -23,5 +29,6 @@ export default class AppNav extends React.Component {
 }
 AppNav.propTypes = {
     pages: React.PropTypes.array.isRequired,
-    currPage: React.PropTypes.string.isRequired
+    currPage: React.PropTypes.string.isRequired,
+    changeNavPage: React.PropTypes.func.isRequired
 }
