@@ -13207,9 +13207,10 @@ var App = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
         _this.state = {
-            navPages: ["Home", "About", "Projects", "Writing"],
+            navPages: ["Home", "About" /*, "Projects", "Writing"*/],
             mainPage: "Home"
         };
+        _this.changePage = _this.changePage.bind(_this);
         return _this;
     }
 
@@ -13217,6 +13218,15 @@ var App = function (_React$Component) {
         key: 'componentDidMount',
         value: function componentDidMount() {
             console.log('App.jsx mounted');
+        }
+    }, {
+        key: 'changePage',
+        value: function changePage(newPage) {
+            if (this.state.navPages.indexOf(newPage) > -1) {
+                this.setState({ mainPage: newPage });
+            } else {
+                console.error('App.jsx: changePage: Bad page change sent \'' + newPage + '\'.');
+            }
         }
     }, {
         key: 'render',
@@ -13228,7 +13238,8 @@ var App = function (_React$Component) {
                     mainText: 'Header' }),
                 _react2.default.createElement(_AppNav2.default, {
                     pages: this.state.navPages,
-                    currPage: this.state.mainPage }),
+                    currPage: this.state.mainPage,
+                    changeNavPage: this.changePage }),
                 _react2.default.createElement(_AppMain2.default, {
                     page: this.state.mainPage }),
                 _react2.default.createElement(_AppFooter2.default, null)
@@ -13288,26 +13299,30 @@ var AppFooter = function (_React$Component) {
                 bLink = "https://babeljs.io/";
             return _react2.default.createElement(
                 "footer",
-                null,
-                "Made with ",
+                { className: "footer" },
                 _react2.default.createElement(
-                    "a",
-                    { href: rLink },
-                    "React"
-                ),
-                ", ",
-                _react2.default.createElement(
-                    "a",
-                    { href: wLink },
-                    "webpack"
-                ),
-                ", and ",
-                _react2.default.createElement(
-                    "a",
-                    { href: bLink },
-                    "Babel"
-                ),
-                "."
+                    "div",
+                    null,
+                    "Made with ",
+                    _react2.default.createElement(
+                        "a",
+                        { href: rLink },
+                        "React"
+                    ),
+                    ", ",
+                    _react2.default.createElement(
+                        "a",
+                        { href: wLink },
+                        "webpack"
+                    ),
+                    ", and ",
+                    _react2.default.createElement(
+                        "a",
+                        { href: bLink },
+                        "Babel"
+                    ),
+                    "."
+                )
             );
         }
     }]);
@@ -13357,12 +13372,16 @@ var AppHeader = function (_React$Component) {
     }
 
     _createClass(AppHeader, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             return _react2.default.createElement(
-                'header',
-                null,
-                this.props.mainText
+                "header",
+                { className: "col-xs-12 text-center" },
+                _react2.default.createElement(
+                    "p",
+                    null,
+                    this.props.mainText
+                )
             );
         }
     }]);
@@ -13511,10 +13530,16 @@ var AppNav = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (AppNav.__proto__ || Object.getPrototypeOf(AppNav)).call(this, props));
 
         _this.state = {};
+        _this.changePage = _this.changePage.bind(_this);
         return _this;
     }
 
     _createClass(AppNav, [{
+        key: "changePage",
+        value: function changePage(e) {
+            this.props.changeNavPage(e.target.innerHTML);
+        }
+    }, {
         key: "render",
         value: function render() {
             var _this2 = this;
@@ -13527,10 +13552,12 @@ var AppNav = function (_React$Component) {
                     return _react2.default.createElement(
                         "li",
                         { key: pageName,
-                            className: isActive ? "active" : "" },
+                            className: isActive ? "active" : "",
+                            value: pageName,
+                            onClick: _this2.changePage },
                         _react2.default.createElement(
                             "a",
-                            { href: "" },
+                            null,
                             pageName
                         )
                     );
@@ -13546,7 +13573,8 @@ exports.default = AppNav;
 
 AppNav.propTypes = {
     pages: _react2.default.PropTypes.array.isRequired,
-    currPage: _react2.default.PropTypes.string.isRequired
+    currPage: _react2.default.PropTypes.string.isRequired,
+    changeNavPage: _react2.default.PropTypes.func.isRequired
 };
 
 /***/ }),
@@ -13593,10 +13621,16 @@ var About = function (_React$Component) {
                 'section',
                 null,
                 _react2.default.createElement(
+                    'h2',
+                    null,
+                    'About'
+                ),
+                _react2.default.createElement(
                     'p',
                     null,
-                    'main/About'
-                )
+                    'This is a personal site I made mostly to learn React.'
+                ),
+                _react2.default.createElement('hr', null)
             );
         }
     }]);
@@ -13652,10 +13686,16 @@ var Home = function (_React$Component) {
                 'section',
                 null,
                 _react2.default.createElement(
+                    'h2',
+                    null,
+                    'Home'
+                ),
+                _react2.default.createElement(
                     'p',
                     null,
-                    'main/Home'
-                )
+                    'Here\'s the home page, more to come soon!'
+                ),
+                _react2.default.createElement('hr', null)
             );
         }
     }]);

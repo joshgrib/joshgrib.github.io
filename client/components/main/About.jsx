@@ -8,7 +8,9 @@ export default class About extends React.Component {
     render(){
         return(
             <section>
-                <p>main/About</p>
+              <h2>About</h2>
+              <p>This is a personal site I made mostly to learn React.</p>
+              <hr/>
             </section>
         );
     }

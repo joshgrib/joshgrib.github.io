@@ -10,8 +10,10 @@ export default class AppFooter extends React.Component {
             wLink = "https://webpack.js.org/",
             bLink = "https://babeljs.io/";
         return(
-            <footer>
+            <footer className="footer">
+              <div>
                 Made with <a href={rLink}>React</a>, <a href={wLink}>webpack</a>, and <a href={bLink}>Babel</a>.
+                </div>
             </footer>
         );
     }

@@ -9,7 +9,7 @@ export default class App extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            navPages: ["Home", "About", "Projects", "Writing"],
+            navPages: ["Home", "About"/*, "Projects", "Writing"*/],
             mainPage: "Home"
         };
         this.changePage = this.changePage.bind(this);
@@ -35,7 +35,7 @@ export default class App extends React.Component {
                     changeNavPage={this.changePage}/>
                 <AppMain
                     page={this.state.mainPage}/>
-                <AppFooter/>
+                  <AppFooter/>
             </div>
         );
     }

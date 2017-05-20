@@ -7,7 +7,8 @@ export default class AppHeader extends React.Component {
     }
     render(){
         return(
-            <header>{this.props.mainText}</header>
+            <header className="col-xs-12 text-center">
+              <p>{this.props.mainText}</p></header>
         );
     }
 }
