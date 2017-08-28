@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Writing extends React.Component {
+export default class Musings extends React.Component {
     constructor(props){
         super(props);
         this.state = {};
@@ -8,9 +8,10 @@ export default class Writing extends React.Component {
     render(){
         return(
             <section>
-                <p>main/Writing</p>
+                <h2>Musings</h2>
+                <p>A place for random writing or whatever</p>
             </section>
         );
     }
 }
-Writing.propTypes = {}
+Musings.propTypes = {}

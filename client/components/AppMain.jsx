@@ -3,7 +3,7 @@ import React from 'react';
 import Home from './main/Home.jsx';
 import About from './main/About.jsx';
 import Projects from './main/Projects.jsx';
-import Writing from './main/Writing.jsx';
+import Musings from './main/Musings.jsx';
 import Personal from './main/Personal.jsx';
 
 export default class AppMain extends React.Component {
@@ -23,8 +23,8 @@ export default class AppMain extends React.Component {
             case "Projects":
                 content = (<Projects/>);
                 break;
-            case "Writing":
-                content = (<Writing/>);
+            case "Musings":
+                content = (<Musings/>);
                 break;
             case "Personal":
                 content = (<Personal/>);

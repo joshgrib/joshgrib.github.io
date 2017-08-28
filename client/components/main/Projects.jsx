@@ -8,7 +8,8 @@ export default class Projects extends React.Component {
     render(){
         return(
             <section>
-                <p>main/Projects</p>
+                <h2>Project</h2>
+                <p>This will have links to different projects</p>
             </section>
         );
     }

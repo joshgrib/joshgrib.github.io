@@ -9,7 +9,7 @@ export default class App extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            navPages: ["Home", "About"/*, "Projects", "Writing"*/],
+            navPages: ["Home", /*"About",*/ "Projects", "Musings"],
             mainPage: "Home"
         };
         this.changePage = this.changePage.bind(this);
@@ -28,7 +28,7 @@ export default class App extends React.Component {
         return(
             <div id="App">
                 <AppHeader
-                    mainText="Header"/>
+                    mainText="Josh Gribbon"/>
                 <AppNav
                     pages={this.state.navPages}
                     currPage={this.state.mainPage}
